@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Encriptador V3 version iterativa</title>
+</head>
+<body>
+    <header>
+        <div class="header__logo">
+            <h1 class="header__h1">
+                <img src="images/Logo.svg" alt="Logo Alura" class="header__img">
+            </h1>
+        </div>
+    </header>
+    <main>
+        <div class="main__container">
+            <div class="main__entry">
+                <input type="text" class="main__input" placeholder="Ingrese el texto a Encriptar" id="input">
+                <p class="main__entry-p"><i class="fa-solid fa-circle-info"></i>Solo letras minusculas y sin acento.</p>
+                <div class="main__buttons">
+                    <!-- <p class="main__buttons-p display-none"><i class="fa-solid fa-circle-info"></i> Solo letras minusculas y sin acento.</p> -->
+                    <input type="button" class="main__btn" value="Encriptador" id="encriptador">
+                    <input type="button" class="main__btn" value="Desencriptador" id="desencriptador">
+                </div>
+            </div>
+            <div class="main__output">
+                <div class="no-content" id="no-content">
+                    <img src="images/Muñeco.png" alt="" >
+                    <p class="title">Ningún mensaje fue encontrado</p>
+                    <p class="subtitle">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <textarea name="" id="text-output" cols="30" rows="10" id="textarea"></textarea>
+                <div class="main__copy">
+                    <input type="button" class="copy-btn" value="Copiar" id="copiar">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__container">
+            <div class="footer__title">
+                <h2 class="title-section">Contacta conmigo</h2>
+            </div>
+            <div class="footer__contact">
+                <a href="https://github.com/LurrCTN"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/fortin-luca/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="footer__copyright">
+                <p class="footer__copyright__h3">&copy Luca Fortin - Estudiante Oracle Next Education / Alura Latam</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/6268ec5fe6.js" crossorigin="anonymous"></script>
+</body>
+</html>
