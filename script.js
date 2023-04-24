@@ -70,6 +70,10 @@ function desencriptacion() {
             if(input.value[index] === "i"){
                 array.push("a")
             }
+            else {
+                index = index - 1
+                array.push(input.value[index])
+            }
         } 
         else if(input.value[index] === "e"){
             index++
@@ -81,9 +85,21 @@ function desencriptacion() {
                         index++
                         if(input.value[index] === "r"){
                             array.push("e")
+                        } else {
+                            index = index - 4
+                            array.push(input.value[index])
                         }
+                    } else {
+                        index = index - 3
+                        array.push(input.value[index])
                     }
+                } else {
+                    index = index - 2
+                    array.push(input.value[index])
                 }
+            } else {
+                index = index - 1
+                array.push(input.value[index])
             }
         } 
         else if(input.value[index] === "i"){
@@ -94,8 +110,17 @@ function desencriptacion() {
                     index++
                     if(input.value[index] === "s"){
                         array.push("i")
+                    } else {
+                        index = index - 3
+                        array.push(input.value[index])
                     }
+                } else {
+                    index = index - 2
+                    array.push(input.value[index])
                 }
+            } else {
+                index = index - 1
+                array.push(input.value[index])
             }
         } 
         else if(input.value[index] === "o"){
@@ -106,8 +131,17 @@ function desencriptacion() {
                     index++
                     if(input.value[index] === "r"){
                         array.push("o")
+                    } else {
+                        index = index - 3
+                        array.push(input.value[index])
                     }
+                } else {
+                    index = index - 2
+                    array.push(input.value[index])
                 }
+            } else {
+                index = index - 1
+                array.push(input.value[index])
             }
         } 
         else if(input.value[index] === "u"){
@@ -118,8 +152,17 @@ function desencriptacion() {
                     index++
                     if(input.value[index] === "t"){
                         array.push("u")
+                    } else {
+                        index = index - 3
+                        array.push(input.value[index])
                     }
+                }else {
+                    index = index - 2
+                    array.push(input.value[index])
                 }
+            }else {
+                index = index - 1
+                array.push(input.value[index])
             }
         } else {
             array.push(input.value[index])
