@@ -6,16 +6,91 @@
 
 :root {
     --font-family-1 : 'Roboto', sans-serif;
-    --background-default : #F3F5FC
+    --background-default : #F3F5FC;
+    --background-darkmode : #444;
+    --text-darkmode : #fff;
 }
 
 body{
     background: var(--background-default);
+    transition: .3s background;
+}
+
+body.dark {
+    background-color: #2a2a2a;
 }
 
 header{
     display: block;
     padding: 1em;
+}
+
+.header__logo {
+    display: inline-block;
+}
+
+.header__h1 {
+    display: inline-block;
+}
+
+body.dark .header__img {
+    filter: invert();
+}
+
+header .container{
+    display: inline-flex;
+    justify-content: end;
+    align-items: center; 
+    width: 90%;
+    height: 100px;
+}
+
+.darkmode {
+    display: inline-block;
+}
+
+#theme {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    border-radius: 1000px;
+    background-color: #2d6b84;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    margin-right: 110px;
+}
+
+#theme::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border: .5px solid #d1d1d1;
+    border-radius: 100px;
+    top: 1;
+    left: 0;
+    right: unset;
+    transition: .5s all;
+}
+
+#theme.active{
+    background: #d88919;
+    color: #000;
+}
+
+#theme.active i {
+    color: #000
+}
+
+#theme.active::after {
+    right: 0;
+    left: unset;
 }
 
 main {
@@ -43,6 +118,15 @@ main {
     background-color: var(--background-default);
 }
 
+body.dark .main__input {
+    background: var(--background-darkmode);
+    color: var(--text-darkmode);
+}
+
+body.dark .main__input::placeholder {
+    color: var(--text-darkmode);
+}
+
 .main__entry-p{
     display: flex;
     align-items: end;
@@ -51,8 +135,12 @@ main {
     font-family: var(--font-family-1);
 }
 
+body.dark .main__entry-p{
+    color: var(--text-darkmode)
+}
+
 .main__entry-p i {
-    margin-right: 6px;
+    margin: 0 6px 3px 0;
 }
 
 .main__buttons{
@@ -71,6 +159,11 @@ main {
     border-radius: 10px;
 }
 
+body.dark .main__btn {
+    background: var(--background-darkmode);
+    color: var(--text-darkmode);
+}
+
 .main__output{
     background-color: #FFF;
     margin-left: 3em;
@@ -82,6 +175,11 @@ main {
     align-items: center;
     justify-content: center;
     border-radius: 30px;
+}
+
+body.dark .main__output {
+    background: var(--background-darkmode);
+    color: var(--text-darkmode);
 }
 
 .no-content{
@@ -117,6 +215,10 @@ main {
     color: #555;
 }
 
+body.dark .no-content .subtitle {
+    color: #fff;
+}
+
 .main__output textarea {
     resize: none;
     border: none;
@@ -125,6 +227,11 @@ main {
     display: none;
     font-family: var(--font-family-1);
     font-size: 1.2em;
+}
+
+body.dark .main__output textarea {
+    background: var(--background-darkmode);
+    color: var(--text-darkmode);
 }
 
 .main__copy {
@@ -140,6 +247,11 @@ main {
     font-size: 1.1em;
     letter-spacing: .8px;
     border-radius: 10px;
+}
+
+body.dark .main__copy .copy-btn {
+    background: var(--background-darkmode);
+    color: var(--text-darkmode);
 }
 
 .main__btn,
@@ -179,16 +291,28 @@ footer {
     letter-spacing: .6px;
 }
 
+body.dark .footer__title .title-section {
+    color: var(--text-darkmode);
+}
+
 .footer__contact a i {
     font-size: 3em;
     color: #000;
     margin: 0 1em 0;
 }
 
+body.dark .footer__contact a i {
+    color: var(--text-darkmode);
+}
+
 .footer__copyright__h3{
     font-family: var(--font-family-1);
     letter-spacing: .4px;
     font-size: .8em;
+}
+
+body.dark .footer__copyright__h3 {
+    color: var(--text-darkmode);
 }
 
 @media screen and (max-width: 1700px) {

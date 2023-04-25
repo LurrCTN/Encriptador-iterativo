@@ -184,3 +184,10 @@ encriptador.onclick = encriptacion;
 desencriptador.onclick = desencriptacion;
 
 copiar.onclick = copiarTextarea
+
+const btnswitch = document.querySelector('#theme');
+
+btnswitch.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    btnswitch.classList.toggle('active')
+})
