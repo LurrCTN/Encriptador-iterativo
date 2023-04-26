@@ -1,0 +1,20 @@
+{
+    "flags" : {
+        "flags__title" : "Choose a Language"
+    },
+    "entry" : {
+        "input" : "Enter the text to encrypt",
+        "entry-p" : "<i class='fa-solid fa-circle-info'></i>Only lowercase letters and no accent",
+        "encrypt-btn" : "Encrypt",
+        "decrypt-btn" : "Decrypt"
+    },
+    "output" : {
+        "title" : "No message was found",
+        "subtitle" : "Enter the text you want to encrypt or decrypt.",
+        "copy-btn" : "Copy"
+    },
+    "footer" : {
+        "title" : "Contact me",
+        "copyright" : "Luca Fortin - Student Oracle Next Education / Alura Latam"
+    }
+}

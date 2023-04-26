@@ -1,0 +1,20 @@
+{
+    "flags" : {
+        "flags__title" : "Escolha um idioma"
+    },
+    "entry" : {
+        "input" : "Digite o texto para criptografar",
+        "entry-p" : "<i class='fa-solid fa-circle-info'></i>Apenas letras minúsculas e sem acento",
+        "encrypt-btn" : "criptografar",
+        "decrypt-btn" : "descriptografar"
+    },
+    "output" : {
+        "title" : "Nenhuma mensagem foi encontrada",
+        "subtitle" : "Digite o texto que deseja criptografar ou descriptografar.",
+        "copy-btn" : "Copiar"
+    },
+    "footer" : {
+        "title" : "contate-me",
+        "copyright" : "Luca Fortin - Estudante Oracle Next Education / Alura Latam"
+    }
+}

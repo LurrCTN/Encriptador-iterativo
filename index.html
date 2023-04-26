@@ -19,14 +19,28 @@
             </h1>
         </div>
         <div class="container">
+            <div class="flags" id="flags">
+                <p 
+                class="flags__title"
+                data-section="flags"
+                data-value="flags__title">
+                    Elige un Lenguaje
+                </p>
+                <div class="flags__items" data-language="es">
+                    <img src="icons/es.svg" alt="es" class="flags__img">
+                </div>
+                <div class="flags__items" data-language="pt">
+                    <img src="icons/br.svg" alt="pt" class="flags__img">
+                </div>
+                <div class="flags__items" data-language="en">
+                    <img src="icons/gb.svg" alt="en" class="flags__img">
+                </div>
+            </div>
             <div class="darkmode">
                 <button id="theme">
                     <i class="fa-solid fa-sun fa-xl"></i>
                     <i class="fa-regular fa-moon fa-xl"></i>
                 </button>
-            </div>
-            <div class="language">
-
             </div>
         </div>
     </header>
@@ -34,17 +48,42 @@
         <div class="main__container">
             <div class="main__entry">
                 <input type="text" class="main__input" placeholder="Ingrese el texto a Encriptar" id="input">
-                <p class="main__entry-p"><i class="fa-solid fa-circle-info"></i>Solo letras minusculas y sin acento.</p>
+                <p 
+                class="main__entry-p"
+                data-section="entry"
+                data-value="entry-p">
+                    <i class="fa-solid fa-circle-info"></i>Solo letras minusculas y sin acento.
+                </p>
                 <div class="main__buttons">
-                    <input type="button" class="main__btn" value="Encriptador" id="encriptador">
-                    <input type="button" class="main__btn" value="Desencriptador" id="desencriptador">
+                    <input 
+                    type="button" 
+                    class="main__btn" 
+                    value="Encriptador" 
+                    id="encriptador"
+                    data-section="entry"
+                    data-value="encryp-btn">
+                    <input 
+                    type="button" 
+                    class="main__btn" 
+                    value="Desencriptador" 
+                    id="desencriptador">
                 </div>
             </div>
             <div class="main__output">
                 <div class="no-content" id="no-content">
                     <img src="images/Muñeco.png" alt="" >
-                    <p class="title">Ningún mensaje fue encontrado</p>
-                    <p class="subtitle">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    <p 
+                    class="title"
+                    data-section="output" 
+                    data-value="title">
+                        Ningún mensaje fue encontrado
+                    </p>
+                    <p 
+                    class="subtitle" 
+                    data-section="output" 
+                    data-value="subtitle">
+                        Ingresa el texto que desees encriptar o desencriptar.
+                    </p>
                 </div>
                 <textarea name="" id="text-output" cols="30" rows="10" id="textarea"></textarea>
                 <div class="main__copy">
@@ -56,14 +95,24 @@
     <footer>
         <div class="footer__container">
             <div class="footer__title">
-                <h2 class="title-section">Contacta conmigo</h2>
+                <h2 
+                class="title-section" 
+                data-section="footer" 
+                data-value="title">
+                    Contacta conmigo
+                </h2>
             </div>
             <div class="footer__contact">
                 <a href="https://github.com/LurrCTN"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/fortin-luca/"><i class="fa-brands fa-linkedin"></i></a>
             </div>
             <div class="footer__copyright">
-                <p class="footer__copyright__h3">&copy Luca Fortin - Estudiante Oracle Next Education / Alura Latam</p>
+                <p 
+                class="footer__copyright__h3" 
+                data-section="footer" 
+                data-value="copyright">
+                    &copy Luca Fortin - Estudiante Oracle Next Education / Alura Latam
+                </p>
             </div>
         </div>
     </footer>

@@ -66,106 +66,106 @@ function desencriptacion() {
 
     for(let index = 0; index < input.value.length; index++){
         if(input.value[index] === "a"){
-            index++
+            index++;
             if(input.value[index] === "i"){
-                array.push("a")
+                array.push("a");
             }
             else {
-                index = index - 1
-                array.push(input.value[index])
+                index = index - 1;
+                array.push(input.value[index]);
             }
         } 
         else if(input.value[index] === "e"){
-            index++
+            index++;
             if(input.value[index] === "n"){
-                index++
+                index++;
                 if(input.value[index] === "t"){
-                    index++
+                    index++;
                     if(input.value[index] === "e"){
-                        index++
+                        index++;
                         if(input.value[index] === "r"){
-                            array.push("e")
+                            array.push("e");
                         } else {
-                            index = index - 4
-                            array.push(input.value[index])
+                            index = index - 4;
+                            array.push(input.value[index]);
                         }
                     } else {
-                        index = index - 3
-                        array.push(input.value[index])
+                        index = index - 3;
+                        array.push(input.value[index]);
                     }
                 } else {
-                    index = index - 2
-                    array.push(input.value[index])
+                    index = index - 2;
+                    array.push(input.value[index]);
                 }
             } else {
-                index = index - 1
-                array.push(input.value[index])
+                index = index - 1;
+                array.push(input.value[index]);
             }
         } 
         else if(input.value[index] === "i"){
-            index++
+            index++;
             if(input.value[index] === "m"){
-                index++
+                index++;
                 if(input.value[index] === "e"){
-                    index++
+                    index++;
                     if(input.value[index] === "s"){
-                        array.push("i")
+                        array.push("i");
                     } else {
-                        index = index - 3
-                        array.push(input.value[index])
+                        index = index - 3;
+                        array.push(input.value[index]);
                     }
                 } else {
-                    index = index - 2
-                    array.push(input.value[index])
+                    index = index - 2;
+                    array.push(input.value[index]);
                 }
             } else {
-                index = index - 1
-                array.push(input.value[index])
+                index = index - 1;
+                array.push(input.value[index]);
             }
         } 
         else if(input.value[index] === "o"){
-            index++
+            index++;
             if(input.value[index] === "b"){
-                index++
+                index++;
                 if(input.value[index] === "e"){
-                    index++
+                    index++;
                     if(input.value[index] === "r"){
-                        array.push("o")
+                        array.push("o");
                     } else {
-                        index = index - 3
-                        array.push(input.value[index])
+                        index = index - 3;
+                        array.push(input.value[index]);
                     }
                 } else {
-                    index = index - 2
-                    array.push(input.value[index])
+                    index = index - 2;
+                    array.push(input.value[index]);
                 }
             } else {
-                index = index - 1
-                array.push(input.value[index])
+                index = index - 1;
+                array.push(input.value[index]);
             }
         } 
         else if(input.value[index] === "u"){
-            index++
+            index++;
             if(input.value[index] === "f"){
-                index++
+                index++;
                 if(input.value[index] === "a"){
-                    index++
+                    index++;
                     if(input.value[index] === "t"){
-                        array.push("u")
+                        array.push("u");
                     } else {
-                        index = index - 3
-                        array.push(input.value[index])
+                        index = index - 3;
+                        array.push(input.value[index]);
                     }
                 }else {
-                    index = index - 2
-                    array.push(input.value[index])
+                    index = index - 2;
+                    array.push(input.value[index]);
                 }
             }else {
-                index = index - 1
-                array.push(input.value[index])
+                index = index - 1;
+                array.push(input.value[index]);
             }
         } else {
-            array.push(input.value[index])
+            array.push(input.value[index]);
         }
     }
 
@@ -176,18 +176,48 @@ function desencriptacion() {
 
 function copiarTextarea() {
     output.select();
-    document.execCommand("copy")
+    document.execCommand("copy");
 }
 
 encriptador.onclick = encriptacion;
 
 desencriptador.onclick = desencriptacion;
 
-copiar.onclick = copiarTextarea
+copiar.onclick = copiarTextarea;
 
 const btnswitch = document.querySelector('#theme');
 
 btnswitch.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-    btnswitch.classList.toggle('active')
+    btnswitch.classList.toggle('active');
+})
+
+const flagsElement = document.getElementById("flags");
+
+const textsToChange = document.querySelectorAll("[data-section]");
+
+const changeLanguage = async (language) => {
+    const requestJson = await fetch(`./languages/${language}.json`);
+    const texts = await requestJson.json();
+
+    for (const textToChange of textsToChange){
+        const section = textToChange.dataset.section;
+        const value = textToChange.dataset.value;
+
+        textToChange.innerHTML = texts[section][value];
+    }
+
+    const nuevoValorEncryptBtn = texts.entry["encrypt-btn"];
+    const nuevoValorDecryptBtn = texts.entry["decrypt-btn"];
+    const nuevoValorCopyBtn = texts.output["copy-btn"];
+    const nuevoPlaceholder = texts.entry["input"]
+
+    encriptador.value = nuevoValorEncryptBtn;
+    desencriptador.value = nuevoValorDecryptBtn
+    copiar.value = nuevoValorCopyBtn;
+    input.placeholder = nuevoPlaceholder
+}
+
+flagsElement.addEventListener('click', (e) => {
+    changeLanguage(e.target.parentElement.dataset.language);
 })

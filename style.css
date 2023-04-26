@@ -27,6 +27,7 @@ header{
 
 .header__logo {
     display: inline-block;
+    width: 10%;
 }
 
 .header__h1 {
@@ -41,8 +42,33 @@ header .container{
     display: inline-flex;
     justify-content: end;
     align-items: center; 
-    width: 90%;
+    width: 80%;
     height: 100px;
+}
+
+.flags {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2%;
+}
+
+.flags__title {
+    font-family: var(--font-family-1);
+}
+
+body.dark .flags__title {
+    color: var(--text-darkmode);
+}
+
+.flags__items{
+    width: 30px;
+}
+
+.flags__img {
+    display: block;
+    cursor: pointer;
 }
 
 .darkmode {
@@ -267,7 +293,6 @@ input[type="button"]:active{
     background-color: #3dadea;
 }
 
-
 footer {
     width: 100%;
     text-align: center;
@@ -325,6 +350,9 @@ body.dark .footer__copyright__h3 {
 }
 
 @media screen and (max-width: 1400px) {
+    header .container {
+        width: 80%;
+    }
     main {
         margin: 2em 8em;
     }
@@ -377,7 +405,24 @@ body.dark .footer__copyright__h3 {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .header__logo{
+        display: block;
+    }
+    header .container {
+        width: 100%;
+        justify-content: center;
+    }
+    .darkmode {
+        width: 100px;
+        margin-left: 2em;
+    }
+}
+
 @media screen and (max-width: 500px) {
+    .flags__title {
+        display: none;
+    }
     main {
         margin: 1em;
     }

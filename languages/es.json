@@ -1,0 +1,20 @@
+{
+    "flags" : {
+        "flags__title" : "Elige un Lenguaje"
+    },
+    "entry" : {
+        "input" : "Ingrese el texto a encriptar",
+        "entry-p" : "<i class='fa-solid fa-circle-info'></i>Solo letras minusculas y sin acento",
+        "encrypt-btn" : "Encriptar",
+        "decrypt-btn" : "Desencriptar"
+    },
+    "output" : {
+        "title" : "Ningún mensaje fue encontrado",
+        "subtitle" : "Ingresa el texto que desees encriptar o desencriptar.",
+        "copy-btn" : "Copiar"
+    },
+    "footer" : {
+        "title" : "Contacta conmigo",
+        "copyright" : "Luca Fortin - Estudiante Oracle Next Education / Alura Latam"
+    }
+}
